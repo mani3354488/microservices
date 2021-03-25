@@ -1,18 +1,18 @@
 module.exports.up = (queryInterface, DataTypes) => {
-    return queryInterface.createTable("listings", {
+    return queryInterface.createTable("users", {
         id: {
             allowNull: false,
-            autoIncrement: true,
             primaryKey: true,
-            type: DataTypes.INTEGER.UNSIGNED
+            type: DataTypes.UUID
         },
-        title: {
+        email: {
             allowNull: false,
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            unique: true
         },
-        description: {
+        passwordHash: {
             allowNull: false,
-            type: DataTypes.TEXT
+            type: DataTypes.CHAR(64)
         },
         createdAt: {
             allowNull: false,
@@ -30,3 +30,5 @@ module.exports.up = (queryInterface, DataTypes) => {
         charset: "utf8"
     });
 };
+
+module.exports.down = queryInterface => queryInterface.dropTable("users");
