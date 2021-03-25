@@ -1,7 +1,7 @@
 version: "3"
 services: 
   listings-services:
-    build: "./listings-service"
+    build: "./listings-services"
     depends_on: 
       - listings-services-db
     environment: 
@@ -11,7 +11,7 @@ services:
   
   listings-services-db:
     environment: 
-      - MYSQL_ROOT_PASSWORD=MYSQL_ROOT_PASSWORD
+      - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=db
     image: mysql:5.7.20
     ports: 
@@ -28,7 +28,7 @@ services:
   
   users-services-db:
     environment: 
-      - MYSQL_ROOT_PASSWORD=MYSQL_ROOT_PASSWORD
+      - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=db
     image: mysql:5.7.20
     ports: 
