@@ -3,8 +3,6 @@ import cors from 'cors';
 
 import accessEnv from '#root/helpers/accessEnv';
 
-import setupRoutes from './routes'; 
-
 const PORT = accessEnv("PORT", 7101);
 
 const app = express();
