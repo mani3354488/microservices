@@ -17,6 +17,8 @@
     "@babel/preset-env": "^7.13.12",
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-watch": "^7.4.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2",
     "sequelize-cli": "^6.2.0"
