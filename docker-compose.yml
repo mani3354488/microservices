@@ -26,7 +26,7 @@ services:
     environment: 
       - DB_URI=mysql://root:password@users-services-db/db?charset=UTF8
     ports: 
-      - 7100:7100
+      - 7101:7101
     volumes: 
       - ./users-services:/opt/app
   
