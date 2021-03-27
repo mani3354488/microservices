@@ -29,30 +29,32 @@ User.init(
 
 );
 
-export class UserSession extends Model()
-UserSession.init({
-    id: {
-        allowNull: false,
-        primaryKey: true,
-        type: DataTypes.UUID
-    },
-    userId: {
-        allowNull: false,
-        references: {
-            key: "id",
-            model: "users"
+export class UserSession extends Model {}
+UserSession.init(
+    {
+        id: {
+            allowNull: false,
+            primaryKey: true,
+            type: DataTypes.UUID
         },
-        type: DataTypes.UUID,
-        unique: true
+        userId: {
+            allowNull: false,
+            references: {
+                key: "id",
+                model: "users"
+            },
+            type: DataTypes.UUID,
+            unique: true
+        },
+        experiesAt: {
+            allowNull: false,
+            type: DataTypes.DATE
+        },
     },
-    experiesAt: {
-        allowNull: false,
-        type: DataTypes.DATE
-    },
-},
-{
-    modelName: "userSessions",
-    paranoid: false,
-    sequelize,
-    updatedAt: false
-})
+    {
+        modelName: "userSessions",
+        paranoid: false,
+        sequelize,
+        updatedAt: false
+    }
+);
