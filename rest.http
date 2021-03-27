@@ -2,6 +2,10 @@ POST http://localhost:7101/users
 Content-Type: application/json
 
 {
-    "email": "test@email.com",
+    "email": "test3@email.com",
     "password": "password"
 }
+
+###
+
+GET http://localhost:7100/listings
